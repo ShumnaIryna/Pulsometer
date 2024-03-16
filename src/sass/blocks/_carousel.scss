@@ -24,3 +24,27 @@
     left: auto;
   }
 }
+
+@media (max-width: 998px) {
+  .carousel {
+    &__inner {
+      width: 600px;
+      img {
+        width: 350px;
+        height: auto;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .carousel {
+    &__inner {
+      ul .slick-dots {
+        display: none;
+      
+      }
+    }
+  }
+}

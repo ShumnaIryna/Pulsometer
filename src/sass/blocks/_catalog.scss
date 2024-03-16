@@ -38,9 +38,12 @@
   }
   &__content {
     margin-top: 60px;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: space-between;
+    &_active {
+      display: flex;
+    }
   }
   &-item {
     width: 300px;
@@ -163,6 +166,33 @@
       &:hover {
         color: $main-color;
       }
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  .catalog {
+    &__content {
+      justify-content: center;
+      column-gap: 20px;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .catalog {
+    &__tabs {
+      padding-left: 20px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog {
+    &__tabs {
+      margin-top: 30px;
+      flex-direction: column;
+      gap: 20px;
     }
   }
 }
