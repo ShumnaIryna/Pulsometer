@@ -68,4 +68,42 @@ $(document).ready(function () {
       $(".overlay, #order").fadeIn("slow");
     });
   });
+
+  //validate
+
+  function validateForms(form) {
+    $(form).validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 2,
+        },
+        phone: "required",
+        email: {
+          required: true,
+          email: true,
+        },
+      },
+
+      messages: {
+        name: {
+          required: "Будь ласка, введіть своє ім'я",
+          minlength: jQuery.validator.format("Введіть {0} символи"),
+        },
+        phone: "Будь ласка, введіть свій номер телефону",
+        email: {
+          required: "Будь ласка, введіть свою пошту",
+          email: "Ваша електронна адреса має бути у форматі name@domain.com",
+        },
+      },
+    });
+  }
+
+  validateForms("#consultation-form");
+  validateForms("#consultation form");
+  validateForms("#order form");
+
+  //maskedinput
+  // in order for the mask to work, it must be removed in <input> type="number"
+  $("input[name=phone]").mask("+38 (999) 999-9999");
 });

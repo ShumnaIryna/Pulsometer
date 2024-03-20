@@ -116,13 +116,9 @@
           Просто заповніть форму заявки<br />
           і ми зателефонуємо вам протягом 10 хвилин
         </div>
-        <form class="feed-form" action="#">
+        <form id="consultation-form" class="feed-form" action="#">
           <input name="name" required placeholder="Ваше ім'я" type="text" />
-          <input
-            name="phone"
-            required
-            placeholder="Ваш телефон"
-            type="number" />
+          <input name="phone" required placeholder="Ваш телефон" />
           <input name="email" required placeholder="Ваш E-mail" type="email" />
 
           <button class="button button_submit">замовити консультацію</button>
@@ -626,13 +622,9 @@
         <div class="modal__subtitle">Просто заповність форму заяви</div>
         <div class="modal__descr">і ми зателефонуємо протягом 10 хвилин</div>
         <form class="feed-form feed-form_mt25" action="#">
-          <input name="name" required placeholder="Ваше ім'я" type="text" />
-          <input
-            name="phone"
-            required
-            placeholder="Ваш телефон"
-            type="number" />
-          <input name="email" required placeholder="Ваш E-mail" type="email" />
+          <input name="name" placeholder="Ваше ім'я" type="text" />
+          <input name="phone" placeholder="Ваш телефон" />
+          <input name="email" placeholder="Ваш E-mail" type="email" />
 
           <button class="button button_submit">замовити консультацію</button>
         </form>
@@ -644,11 +636,7 @@
         <div class="modal__descr">Пульсиметр Polar FT1</div>
         <form class="feed-form feed-form_mt25" action="#">
           <input name="name" required placeholder="Ваше ім'я" type="text" />
-          <input
-            name="phone"
-            required
-            placeholder="Ваш телефон"
-            type="number" />
+          <input name="phone" required placeholder="Ваш телефон" />
           <input name="email" required placeholder="Ваш E-mail" type="email" />
 
           <button class="button button_submit">КУПИТИ</button>
@@ -671,6 +659,8 @@
       type="text/javascript"
       src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/slick.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
