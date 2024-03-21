@@ -106,4 +106,41 @@ $(document).ready(function () {
   //maskedinput
   // in order for the mask to work, it must be removed in <input> type="number"
   $("input[name=phone]").mask("+38 (999) 999-9999");
+
+  //submit form
+  $("form").submit(function (e) {
+    e.preventDefault();
+
+    if (!$(this).valid()) {
+      return;
+    }
+
+    $.ajax({
+      type: "POST",
+      url: "mailer/smart.php",
+      data: $(this).serialize(),
+    }).done(function () {
+      $(this).find("input").val("");
+      $("#consultation, #order").fadeOut();
+      $(".overlay, #thanks").fadeIn("slow");
+
+      $("form").trigger("reset");
+    });
+    return false;
+  });
+
+  //Smooth scroll and up
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 1600) {
+      $(".pageup").fadeIn();
+    } else {
+      $(".pageup").fadeOut();
+    }
+  });
+
+  $("a[href^='#']").click(function () {
+    const _href = $(this).attr("href");
+    $("html, body").animate({ scrollTop: $(_href).offset().top + "px" });
+    return false;
+  });
 });
